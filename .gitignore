@@ -1,0 +1,13 @@
+# Build output and fetched dependencies
+/build/
+/bin/
+/lib/
+
+# Editors
+.idea/
+.vscode/
+
+# Never commit keys
+*.key
+keystore/
+.env

@@ -7,6 +7,8 @@ Go CLI that deploys and drives them through go-ethereum, and tests that run
 every contract, including the attacks it must refuse, on go-ethereum's
 simulated chain.
 
+![Architecture](docs/images/architecture.png)
+
 | Contract | What it does |
 |---|---|
 | [`Storage`](contracts/Storage.sol) | Stores a number, emits `ValueChanged` |
@@ -38,6 +40,8 @@ EthSender (faucet: 1 ETH per address per hour)
   ✓ alice claiming again within the hour refused
 ```
 
+![Demo](docs/images/demo.png)
+
 Other commands: `ethdemo balance <address>`, `ethdemo send <address> <eth>`,
 and `ethdemo txs <address> [blocks]`, which lists an account's transactions
 in recent blocks. The node comes from `ETH_RPC_URL` (default
@@ -62,6 +66,10 @@ Docker is needed:
 [GitHub Actions](.github/workflows/ci.yml) runs gofmt, `go vet`, staticcheck
 and the tests with the race detector, and recompiles the contracts with the
 pinned `solc` to check that the committed bindings are up to date.
+
+| | |
+|---|---|
+| ![Tests](docs/images/tests.png) | ![CI](docs/images/ci.png) |
 
 ## Building the contracts
 
